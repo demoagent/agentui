@@ -44,5 +44,21 @@
   </df-messenger>
 
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const messenger = document.querySelector('df-messenger');
+    const interval = setInterval(() => {
+      const shadowRoot = messenger.shadowRoot;
+      if (shadowRoot) {
+        const titleBar = shadowRoot.querySelector('.df-messenger-titlebar');
+        if (titleBar) {
+          titleBar.style.backgroundColor = '#333333'; // Match chat background
+          titleBar.style.color = '#ffffff'; // Title text color
+          clearInterval(interval); // Stop trying once the title bar is styled
+        }
+      }
+    }, 100); // Check every 100ms
+  });
+</script>
 </body>
 </html>
