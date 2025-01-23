@@ -1,3 +1,4 @@
+``html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,14 +35,8 @@
       --df-messenger-titlebar-color: #ffffff; /* White text for title bar */
     }
 
-    /* Attempt to pierce the shadow DOM and style the user input area */
-    df-messenger-user-input::part(input), /* Try targeting a part named "input" */
-    df-messenger-user-input::part(textarea), /* Try targeting a part named "textarea" */
-    df-messenger-user-input ::part(input-area), /* Try targeting a part named "input-area" */
-    df-messenger-user-input >> .input-field, /* Try targeting a class named "input-field" within the shadow DOM */
-    df-messenger-user-input >> .user-input, /* Try targeting a class named "user-input" within the shadow DOM */
-    df-messenger-user-input >> textarea, /* Try targeting a textarea element within the shadow DOM */
-    df-messenger-user-input >> input { /* Try targeting an input element within the shadow DOM */
+    /* Target the host element to change the user input background color */
+    df-messenger-user-input {
       background-color: #333333; /* Dark background color */
     }
   </style>
