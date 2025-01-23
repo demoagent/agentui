@@ -40,18 +40,25 @@
   </df-messenger>
 
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
+    // Ensure the script runs after the component is fully loaded
+    window.addEventListener('load', () => {
       const messenger = document.querySelector('df-messenger');
       messenger.addEventListener('df-messenger-loaded', () => {
+        // Access the shadow root and then the title bar
         const shadowRoot = messenger.shadowRoot;
         const titleBar = shadowRoot.querySelector('.df-messenger-titlebar');
+        
         if (titleBar) {
-          titleBar.style.backgroundColor = '#333333'; // Set background color
-          titleBar.style.color = '#ffffff'; // Set text color
+          // Apply styles to the title bar
+          titleBar.style.backgroundColor = '#333333'; // Dark background
+          titleBar.style.color = '#ffffff'; // White text
+        } else {
+          console.log("Title bar not found.");
         }
       });
     });
   </script>
+
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </body>
 </html>
