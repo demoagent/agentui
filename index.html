@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo</title>
   <style>
+    /* Apply styles directly here */
     body {
       display: flex;
       justify-content: center;
@@ -26,30 +27,28 @@
       --df-messenger-input-box-color: #ffffff; /* White text color for user input */
       --df-messenger-input-box-placeholder-color: #ffffff; /* White placeholder color for user input */
       --df-messenger-send-icon-color: #ffffff; /* White color for the send icon */
+      --df-messenger-input-box-background-color: #222222; /* Dark background for user input box */
+      --df-messenger-input-container-background-color: #222222; /* Dark background for input container */
       width: 100%; /* Full width */
       height: 100%; /* Full height */
     }
 
     /* Override styles for the input area and its container */
-    df-messenger .chat-wrapper {
-      background-color: #222222 !important; /* Dark background for the input container */
+    df-messenger .input-container {
+      background-color: var(--df-messenger-input-container-background-color, #222222) !important; /* Dark background for the input container */
     }
 
-    df-messenger .input-box-wrapper {
-      background-color: #222222 !important; /* Dark background for the input box wrapper */
+    df-messenger .input-container .input-box-wrapper input {
+      background-color: var(--df-messenger-input-box-background-color, #222222) !important; /* Dark background for user input box */
+      color: var(--df-messenger-input-box-color, #ffffff) !important; /* White text color for user input */
     }
 
-    df-messenger .input-box-wrapper input {
-      background-color: #222222 !important; /* Dark background for user input box */
-      color: #ffffff !important; /* White text color for user input */
+    df-messenger .input-container .send-icon-wrapper {
+      background-color: var(--df-messenger-input-container-background-color, #222222) !important; /* Dark background for the send icon container */
     }
 
-    df-messenger .send-icon-wrapper {
-      background-color: #222222 !important; /* Dark background for the send icon wrapper */
-    }
-
-    df-messenger .send-icon-wrapper svg {
-      fill: #ffffff !important; /* White color for the send icon */
+    df-messenger .input-container .send-icon-wrapper svg {
+      fill: var(--df-messenger-send-icon-color, #ffffff) !important; /* White color for the send icon */
     }
   </style>
 </head>
@@ -59,8 +58,7 @@
     agent-id="0c579c22-5047-442f-8944-64686277d904"
     language-code="en"
     max-query-length="-1">
-    <df-messenger-chat chat-title="Demo Agent Using HICOOL Manual Data">
-    </df-messenger-chat>
+    <df-messenger-chat chat-title="Demo Agent Using HICOOL Manual Data"></df-messenger-chat>
   </df-messenger>
 
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
