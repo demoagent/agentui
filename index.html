@@ -45,6 +45,19 @@
     </df-messenger-chat>
   </df-messenger>
 
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const messenger = document.querySelector('df-messenger');
+      messenger.addEventListener('df-messenger-loaded', () => {
+        const shadowRoot = messenger.shadowRoot;
+        const titleBar = shadowRoot.querySelector('.df-messenger-titlebar');
+        if (titleBar) {
+          titleBar.style.backgroundColor = '#333333'; // Set background color
+          titleBar.style.color = '#ffffff'; // Set text color
+        }
+      });
+    });
+  </script>
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </body>
 </html>
