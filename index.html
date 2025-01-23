@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo</title>
   <style>
-    /* Apply styles directly here */
     body {
       display: flex;
       justify-content: center;
@@ -13,26 +12,17 @@
       height: 100vh;
       margin: 0;
       background-color: #121212; /* Dark background color */
-      color: #ffffff; /* White text for the body */
-      font-family: Arial, sans-serif; /* Default font */
     }
 
     df-messenger {
       z-index: 999;
-      --df-messenger-font-color: #ffffff; /* White text inside the messenger */
-      --df-messenger-font-family: Google Sans, Arial, sans-serif;
+      --df-messenger-font-color: #ffffff;
+      --df-messenger-font-family: Google Sans;
       --df-messenger-chat-background: #333333; /* Darker chat background */
-      --df-messenger-message-user-background: #1a73e8; /* Blue background for user messages */
-      --df-messenger-message-bot-background: #444444; /* Darker background for bot messages */
+      --df-messenger-message-user-background: #1a73e8;
+      --df-messenger-message-bot-background: #444444;
       width: 100%; /* Full width */
       height: 100%; /* Full height */
-      --df-messenger-user-input-background-color: #333333; /* Dark background for user input */
-    }
-
-    /* Style the title bar using CSS variables */
-    df-messenger {
-      --df-messenger-titlebar-background-color: #333333; /* Dark background for title bar */
-      --df-messenger-titlebar-color: #ffffff; /* White text for title bar */
     }
   </style>
 </head>
@@ -45,6 +35,39 @@
     <df-messenger-chat chat-title="Demo Agent Using HICOOL Manual Data">
     </df-messenger-chat>
   </df-messenger>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const messenger = document.querySelector('df-messenger');
+      messenger.addEventListener('df-messenger-loaded', () => {
+        const shadowRoot = messenger.shadowRoot;
+
+        // Style the chat title area
+        const titleBar = shadowRoot.querySelector('.df-messenger-titlebar');
+        if (titleBar) {
+          titleBar.style.backgroundColor = '#333333'; // Set background color
+          titleBar.style.color = '#ffffff'; // Set text color
+        }
+
+        // Style the input container
+        const inputArea = shadowRoot.querySelector('.input-container');
+        if (inputArea) {
+          inputArea.style.backgroundColor = '#333333'; // Match the dark theme
+          inputArea.style.borderTop = '1px solid #444444'; // Optional: Add a border
+        }
+
+        // Style the input box
+        const inputBox = shadowRoot.querySelector('input');
+        if (inputBox) {
+          inputBox.style.backgroundColor = '#222222'; // Input background color
+          inputBox.style.color = '#ffffff'; // Text color
+          inputBox.style.border = '1px solid #555555'; // Optional: Add an input border
+          inputBox.style.padding = '10px'; // Add some padding
+          inputBox.style.borderRadius = '5px'; // Optional: Rounded corners
+        }
+      });
+    });
+  </script>
 
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </body>
