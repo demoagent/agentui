@@ -34,9 +34,14 @@
       --df-messenger-titlebar-color: #ffffff; /* White text for title bar */
     }
 
-    /* Target the host element to change the user input background color with !important */
-    df-messenger-user-input {
-      background-color: #333333 !important; /* Dark background color */
+    /* Attempt to override internal styles for user input background color */
+    df-messenger-user-input, /* Target the host element */
+    df-messenger-user-input ::part(input-area), /* Target a potential part named "input-area" */
+    df-messenger-user-input .input-field, /* Target a potential class named "input-field" */
+    df-messenger-user-input .user-input, /* Target a potential class named "user-input" */
+    df-messenger-user-input input, /* Target an input element within the component */
+    df-messenger-user-input textarea { /* Target a textarea element within the component */
+      background-color: #333333 !important; /* Dark background color with !important */
     }
   </style>
 </head>
