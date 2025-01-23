@@ -27,6 +27,12 @@
       width: 100%; /* Full width */
       height: 100%; /* Full height */
     }
+
+    /* Style the title bar using CSS variables */
+    df-messenger {
+      --df-messenger-titlebar-background-color: #333333; /* Dark background for title bar */
+      --df-messenger-titlebar-color: #ffffff; /* White text for title bar */
+    }
   </style>
 </head>
 <body>
@@ -38,26 +44,6 @@
     <df-messenger-chat chat-title="Demo Agent Using HICOOL Manual Data">
     </df-messenger-chat>
   </df-messenger>
-
-  <script>
-    // Ensure the script runs after the component is fully loaded
-    window.addEventListener('load', () => {
-      const messenger = document.querySelector('df-messenger');
-      messenger.addEventListener('df-messenger-loaded', () => {
-        // Access the shadow root and then the title bar
-        const shadowRoot = messenger.shadowRoot;
-        const titleBar = shadowRoot.querySelector('.df-messenger-titlebar');
-        
-        if (titleBar) {
-          // Apply styles to the title bar
-          titleBar.style.backgroundColor = '#333333'; // Dark background
-          titleBar.style.color = '#ffffff'; // White text
-        } else {
-          console.log("Title bar not found.");
-        }
-      });
-    });
-  </script>
 
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </body>
