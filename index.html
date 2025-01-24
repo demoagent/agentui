@@ -4,39 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo</title>
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
   <style>
-    /* Apply styles directly here */
     body {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
-      background-color: #121212; /* Dark background color */
-      color: #ffffff; /* White text for the body */
-      font-family: Arial, sans-serif; /* Default font */
+      background-color: #f3f6fc;
     }
 
     df-messenger {
       z-index: 999;
-      --df-messenger-font-color: #ffffff; /* White text inside the messenger */
-      --df-messenger-font-family: Google Sans, Arial, sans-serif;
-      --df-messenger-chat-background: #333333; /* Darker chat background */
-      --df-messenger-message-user-background: #1a73e8; /* Blue background for user messages */
-      --df-messenger-message-bot-background: #444444; /* Darker background for bot messages */
-      --df-messenger-input-box-color: #ffffff; /* White text color for user input */
-      --df-messenger-input-box-placeholder-color: #ffffff; /* White placeholder color for user input */
-      --df-messenger-send-icon-color: #ffffff; /* White color for the send icon */
-      --df-messenger-input-box-background-color: #1a73e8; /* Dark background for user input box */
-      --df-messenger-input-background: #222222; /* Dark background for input container */
-     --df-messenger-input-box-border: 1px solid red; /* Dark background for user input box */
-      --df-messenger-input-box-margin: auto; /* Dark background for user input box */
-      --df-messenger-input-box-border-radius: 10px; /* Dark background for user input box */
-       --df-messenger-input-width: 200px; /* Dark background for user input box */
-      
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: Google Sans;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+      width: 100%; /* Half the page horizontally */
+      height: 100%; /* Take full vertical height */
     }
-
-
   </style>
 </head>
 <body>
@@ -45,7 +32,9 @@
     agent-id="0c579c22-5047-442f-8944-64686277d904"
     language-code="en"
     max-query-length="-1">
-    <df-messenger-chat chat-title="Demo Agent Using HICOOL Manual Data"></df-messenger-chat>
+    <df-messenger-chat
+      chat-title="Demo Agent Using HICOOL Manual Data">
+    </df-messenger-chat>
   </df-messenger>
 
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
