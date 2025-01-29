@@ -11,16 +11,19 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f3f6fc;
+      background-color: #121212; /* Dark background for the whole page */
     }
 
     df-messenger {
       z-index: 999;
-      --df-messenger-font-color: #000;
+      --df-messenger-font-color: #ffffff; /* Light font for better contrast */
       --df-messenger-font-family: Google Sans;
-      --df-messenger-chat-background: #f3f6fc;
-      --df-messenger-message-user-background: #d3e3fd;
-      --df-messenger-message-bot-background: #fff;
+      --df-messenger-chat-background: #1e1e1e; /* Dark background for chat window */
+      --df-messenger-message-user-background: #4a90e2; /* Distinct color for user messages */
+      --df-messenger-message-bot-background: #333333; /* Dark gray for bot messages */
+      --df-messenger-input-placeholder-color: #bbbbbb; /* Light placeholder text color */
+      --df-messenger-button-titlebar-color: #252525; /* Dark title bar */
+      --df-messenger-send-icon-fill-color: #ffffff; /* White send icon */
       width: 50%; /* Half the page horizontally */
       max-width: 800px; /* Optional limit for very wide screens */
       min-width: 300px; /* Optional minimum size */
