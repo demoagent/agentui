@@ -3,103 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Chat with Nav</title>
+  <title>Demo</title>
   <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Parent container for nav + chat */
-    .layout {
       display: flex;
-      height: 100vh; /* Full viewport height */
-      overflow: hidden; /* Prevent content overflow */
-    }
-
-    /* Left nav bar */
-    .side-nav {
-      background-color: #0b57d0;
-      color: #fff;
-      width: 250px;
-      min-width: 250px; /* Prevent shrinking */
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      padding: 16px;
-      flex-shrink: 0; /* Disable shrinking */
-    }
-
-    /* Chat container */
-    .chat-container {
-      flex-grow: 1; /* Allow chat to take remaining space */
-      display: flex;
-      flex-direction: column;
-      overflow: hidden; /* Prevent chat content from overflowing */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f3f6fc;
     }
 
     df-messenger {
-      width: 100%;
-      height: 100%; /* Ensure chat takes full height */
-    }
-
-    /* Responsive design for mobile */
-    @media (max-width: 768px) {
-      .side-nav {
-        position: absolute;
-        width: 250px;
-        transform: translateX(-100%); /* Initially hidden */
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .side-nav.open {
-        transform: translateX(0); /* Slide in when open */
-      }
-
-      .menu-toggle {
-        position: absolute;
-        top: 16px;
-        left: 16px;
-        background-color: #0b57d0;
-        color: #fff;
-        border: none;
-        padding: 8px 12px;
-        cursor: pointer;
-        z-index: 1000;
-      }
+      z-index: 999;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: Google Sans;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+      width: 50%; /* Half the page horizontally */
+      max-width: 800px; /* Optional limit for very wide screens */
+      min-width: 300px; /* Optional minimum size */
+      height: 100%; /* Take full vertical height */
     }
   </style>
 </head>
 <body>
-  <div class="layout">
-    <!-- Left Navigation -->
-    <div class="side-nav" id="sideNav">
-      <h2>Menu</h2>
-      <ul>
-        <li><a href="#" style="color: #fff;">Home</a></li>
-        <li><a href="#" style="color: #fff;">About</a></li>
-        <li><a href="#" style="color: #fff;">Contact</a></li>
-      </ul>
-    </div>
+  <df-messenger
+    project-id="genai-410716"
+    agent-id="0c579c22-5047-442f-8944-64686277d904"
+    language-code="en"
+    max-query-length="-1">
+    <df-messenger-chat
+      chat-title="Demo Agent Using HICOOL Manual Data">
+    </df-messenger-chat>
+  </df-messenger>
 
-    <!-- Chat Window -->
-    <div class="chat-container">
-      <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
-      <df-messenger
-        project-id="genai-410716"
-        agent-id="0c579c22-5047-442f-8944-64686277d904"
-        language-code="en"
-        max-query-length="-1">
-      </df-messenger>
-    </div>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const sideNav = document.getElementById('sideNav');
-      sideNav.classList.toggle('open');
-    }
-  </script>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </body>
 </html>
